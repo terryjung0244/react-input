@@ -1,5 +1,5 @@
 .inputMainContainer {
-  border: 2px solid red;
+  background-color: black;
   height: 100vh;
   display: flex;
   justify-content: center;

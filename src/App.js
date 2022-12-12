@@ -20,7 +20,7 @@ const App = () => {
         <input
           className="inputContainer"
           name={"inputName"}
-          value={input.inputName}
+          value={input["inputName"]} //Two ways of access variables in object. input["inputName"] or input.inputName
           onChange={onChangeFunc}
           placeholder="Tell me your name"
         />
