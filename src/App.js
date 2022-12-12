@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [input, setInput] = useState({
+    inputName: "",
+    inputAge: "",
+  });
+  const onChangeFunc = (e) => {
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  console.log(input);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="inputMainContainer">
+        <input
+          className="inputContainer"
+          name={"inputName"}
+          value={input.inputName}
+          onChange={onChangeFunc}
+          placeholder="Tell me your name"
+        />
+        <input
+          className="inputContainer"
+          name={"inputAge"}
+          value={input.inputAge}
+          onChange={onChangeFunc}
+          placeholder="Tell me your age"
+        />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
